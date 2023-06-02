@@ -1,6 +1,6 @@
 ﻿namespace TrackerUI
 {
-    partial class TournamentViewerForm
+    partial class tournamentViewerForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TournamentViewerForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(tournamentViewerForm));
             headerLabel = new Label();
             tournamentName = new Label();
             roundLabel = new Label();
@@ -197,10 +197,11 @@
             scoreButton.Text = "Score";
             scoreButton.UseVisualStyleBackColor = true;
             // 
-            // TournamentViewerForm
+            // tournamentViewerForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(800, 450);
             Controls.Add(scoreButton);
             Controls.Add(versusLabel);
@@ -216,8 +217,9 @@
             Controls.Add(roundLabel);
             Controls.Add(tournamentName);
             Controls.Add(headerLabel);
+            ForeColor = SystemColors.ControlText;
             Icon = (Icon)resources.GetObject("$this.Icon");
-            Name = "TournamentViewerForm";
+            Name = "tournamentViewerForm";
             Text = "Tournament Viewer";
             ResumeLayout(false);
             PerformLayout();
