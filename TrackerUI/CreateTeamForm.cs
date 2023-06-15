@@ -31,6 +31,12 @@ namespace TrackerUI
                 p.PhoneNumber = phoneValue.Text;
 
                 GlobalConfig.Connection.CreatePerson(p);
+
+                firstNameValue.Text = "";
+                lastNameValue.Text = "";
+                emailValue.Text = "";
+                phoneValue.Text = "";
+
             }
             else
             {
