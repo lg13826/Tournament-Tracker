@@ -62,11 +62,14 @@ namespace TrackerUI
 
                 GlobalConfig.Connection.CreatePerson(p);
 
+                selectedTeamMembers.Add(p);
+
+                WireUpLists();
+
                 firstNameValue.Text = "";
                 lastNameValue.Text = "";
                 emailValue.Text = "";
                 phoneValue.Text = "";
-
             }
             else
             {
