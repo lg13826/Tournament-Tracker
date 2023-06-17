@@ -35,11 +35,17 @@ namespace TrackerUI
 
         private void WireUpLists()
         {
+            // this just doesn't work if it's not initialized before assignment
+            selectTeamMemberDropDown.DataSource = null;
+
             selectTeamMemberDropDown.DataSource = availableTeamMembers;
             selectTeamMemberDropDown.DisplayMember = "FullName";
 
+            teamMembersListBox.DataSource = null;
+
             teamMembersListBox.DataSource = selectedTeamMembers;
             teamMembersListBox.DisplayMember = "FullName";
+
 
         }
 
@@ -49,7 +55,7 @@ namespace TrackerUI
             {
                 PersonModel p = new PersonModel();
 
-                p.FirstName = firstNameValue.Text; 
+                p.FirstName = firstNameValue.Text;
                 p.LastName = lastNameValue.Text;
                 p.EmailAddress = emailValue.Text;
                 p.PhoneNumber = phoneValue.Text;
@@ -80,5 +86,29 @@ namespace TrackerUI
 
         }
 
+        private void addMemberButton_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)selectTeamMemberDropDown.SelectedItem;
+            if (p != null)
+            {
+                availableTeamMembers.Remove(p);
+                selectedTeamMembers.Add(p);
+
+                WireUpLists();
+            }
+
+        }
+
+        private void removeSelectedMemberButton_Click(object sender, EventArgs e)
+        {
+            PersonModel p = (PersonModel)teamMembersListBox.SelectedItem;
+            if (p != null)
+            {
+                selectedTeamMembers.Remove(p);
+                availableTeamMembers.Add(p);
+                WireUpLists();
+            }
+            
+        }
     }
 }
