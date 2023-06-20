@@ -111,7 +111,12 @@ namespace TrackerUI
                 availableTeamMembers.Add(p);
                 WireUpLists();
             }
-            
+
+        }
+
+        private void createTeamButton_Click(object sender, EventArgs e)
+        {
+            //TODO: Make this Team Button store current selected members to SQL and remove from available list.
         }
     }
 }
