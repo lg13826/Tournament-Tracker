@@ -116,7 +116,15 @@ namespace TrackerUI
 
         private void createTeamButton_Click(object sender, EventArgs e)
         {
-            //TODO: Make this Team Button store current selected members to SQL and remove from available list.
+         
+            TeamModel t = new TeamModel();
+
+            t.TeamName = teamNameValue.Text;
+            t.TeamMembers = selectedTeamMembers;
+
+            t = GlobalConfig.Connection.CreateTeam(t);
+
+            // TODO: Close form after creation, otherwise rest form
         }
     }
 }
