@@ -87,7 +87,7 @@ namespace TrackerLibrary.DataAccess
             return model;
         }
 
-        public TournamentModel CreateTournament(TournamentModel model)
+        public void CreateTournament(TournamentModel model)
         {     
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(GlobalConfig.CnnString(db)))
             {
@@ -120,7 +120,6 @@ namespace TrackerLibrary.DataAccess
 
                 }
             }
-            return model;
         }
 
         public List<PersonModel> GetPerson_All()
